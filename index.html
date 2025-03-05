@@ -8,37 +8,38 @@
     <title>Formulario para Registro de Eventos</title>
 </head>
 <body>
-    <form>
+    <h1>Registro de Evento</h1>
+    <form id="eventForm">
         <fieldset>
             <legend>Información Personal</legend>
-            <label for="firstName">Nombre</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Introduce tu Nombre" required>
-            <label for="lastName">Apellido(s)</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Introduce tu(s) Apellido(s)" required>
-            <label for="ageBar" >Edad</label>
-            <input type="range" id="ageBar" name="age" min="0" max="90" step="1" value="18" oninput="document.getElementById('ageOutput').textContent = this.value" required>
+            <label for="firstName">* Nombre</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Introduce tu Nombre">
+            <label for="lastName">* Apellido(s)</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Introduce tu(s) Apellido(s)">
+            <label for="age">* Edad</label>
+            <input type="range" id="age" name="age" min="0" max="90" step="1" value="18">
             <output id="ageOutput">18</output>
-            <label for="attendeeId">Documento de identificación (opcional):</label>
-            <input type="file" id="attendeeId" name="attendeeId">
+            <label for="id">Documento de identificación (opcional):</label>
+            <input type="file" id="id" name="id">
         </fieldset>
         <fieldset>
             <legend>Información de Contacto</legend>
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="Introduce tu Correo Electrónico" required>
-            <label for="phoneNumber">Número Telefónico</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Introduce tu teléfono a 10 dígitos" pattern="[0-9]{10}" title="Debe contener 10 dígitos numéricos" required>
+            <label for="email">* Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Introduce tu Correo Electrónico">
+            <label for="phoneNumber">* Número Telefónico (10 Dígitos)</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Introduce tu teléfono a 10 dígitos">
         </fieldset>
         <fieldset>
-            <legend>Carácter con el que acude</legend>
+            <legend>* Carácter con el que acude</legend>
             <label for="personalRadio">Personal</label>
-            <input type="radio" id="personalRadio" name="particularOrProfessional" value="personal" required>
+            <input type="radio" id="personalRadio" name="persOrProf" value="personal" checked>
             <label for="professionalRadio">Profesional</label>
-            <input type="radio" id="professionalRadio" name="particularOrProfessional" value="professional">
+            <input type="radio" id="professionalRadio" name="persOrProf" value="professional">
         </fieldset>
         <fieldset>
-            <legend>Intereses</legend>
+            <legend>* Intereses (seleccionar cuando menos uno)</legend>
             <label for="technologyCheckbox">Tecnología</label>
-            <input type="checkbox" id="technologyCheckbox" name="interests" value="Tecnología">
+            <input type="checkbox" id="technologyCheckbox" name="interests" value="Tecnología" checked>
             <label for="businessCheckbox">Negocios</label>
             <input type="checkbox" id="businessCheckbox" name="interests" value="Negocios">
             <label for="musicCheckbox">Música</label>
@@ -50,10 +51,10 @@
         </fieldset>
         <fieldset>
             <legend>Preferencias de Fecha y Horario para el Evento</legend>
-            <label for="eventDate">Fecha</label>
-            <input type="date" id="eventDate" name="eventDate" required>
-            <label for="eventTime">Horario</label>
-            <input type="time" id="eventTime" name="eventTime" required>
+            <label for="eventDate">* Fecha</label>
+            <input type="date" id="eventDate" name="eventDate">
+            <label for="eventTime">* Horario (Únicamente entre las 11:00 a.m. y 06:00 p.m.)</label>
+            <input type="time" id="eventTime" name="eventTime">
         </fieldset>
         <input type="submit" value="Registrarse">
     </form>
